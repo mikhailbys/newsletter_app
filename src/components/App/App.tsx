@@ -6,7 +6,6 @@ import {Switch, Route, Redirect, Link} from "react-router-dom";
 import Toolbar from '@material-ui/core/Toolbar';
 import { NewsContainer } from "../News/NewsContainer";
 import {Home} from "../Home/Home";
-import {Login} from "../Login/Login";
 import {ProtectedRoute} from "../../hoc/ProtectedRoute/ProtectedRoute";
 import {useDispatch} from "react-redux";
 import {LoginButton} from "../../hoc/LoginButton/LoginButton";
