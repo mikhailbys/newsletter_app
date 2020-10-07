@@ -23,7 +23,6 @@ export const LoginContainer = () => {
     // usecallback для onclick-а
     const loginFormSubmitHandler = useCallback((e) => {
         e.preventDefault();
-        debugger;
         const isLogged = checker({username, password});
         isLogged && dispatch(login());
         localStorage.setItem('isAuthorized', JSON.stringify(isLogged));
