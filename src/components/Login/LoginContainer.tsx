@@ -25,7 +25,6 @@ export const LoginContainer = () => {
 
     // usecallback для onclick-а
     const loginFormSubmitHandler = useCallback((e) => {
-        debugger;
         console.log('e', e);
         //e.preventDefault();
         const isLogged = checker({username, password});
