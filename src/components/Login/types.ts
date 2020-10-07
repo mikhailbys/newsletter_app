@@ -10,5 +10,6 @@ export interface PropsT {
     password: string,
     handleUsernameInput:  ChangeEventHandler<HTMLInputElement>,
     handlePasswordInput: ChangeEventHandler<HTMLInputElement>,
-    loginFormSubmitHandler: (e: any) => void
+    loginFormSubmitHandler: (e: any) => void,
+    errorHidden: boolean
 }

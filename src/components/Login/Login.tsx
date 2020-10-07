@@ -19,7 +19,8 @@ export const Login = ({
                           password,
                           handleUsernameInput,
                           handlePasswordInput,
-                          loginFormSubmitHandler
+                          loginFormSubmitHandler,
+                           errorHidden
                       }:PropsT) => {
     const styles = useStyles();
 
@@ -38,7 +39,11 @@ export const Login = ({
                     <Typography component="h1" variant="h5">
                         Sign in to see your personal information
                     </Typography>
-                    <form className={styles.form} noValidate onSubmit={handleSubmit(loginFormSubmitHandler)}>
+                    <form
+                        className={styles.form}
+                        noValidate
+                        onSubmit={handleSubmit(loginFormSubmitHandler)}
+                    >
                         <TextField
                             inputRef={register}
                             error={!!errors.username}
@@ -71,6 +76,13 @@ export const Login = ({
                             id="password"
                             autoComplete="current-password"
                         />
+                        <Typography
+                            color="error"
+                            hidden={errorHidden}
+                            className={styles.error}
+                            variant="h6" >
+                            Invalid credentials
+                        </Typography>
                         <Button
                             type="submit"
                             variant="contained"

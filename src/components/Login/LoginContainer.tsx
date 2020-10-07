@@ -5,13 +5,13 @@ import {login} from "../../store/actions/actions";
 import {UserCredentialsT} from "./types";
 import {Login} from "./Login";
 
-
 const checker = (credentials: UserCredentialsT) =>
     credentials.username === 'Admin' && credentials.password === '12345';
 
 export const LoginContainer = () => {
     const [username, setUsername] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [errorHidden, setErrorHidden] = useState<boolean>(false);
 
     const dispatch = useDispatch();
     const history = useHistory();
@@ -21,13 +21,12 @@ export const LoginContainer = () => {
     const handlePasswordInput: ChangeEventHandler<HTMLInputElement> = (event) =>
         setPassword(event.target.value);
 
-
-
     // usecallback для onclick-а
     const loginFormSubmitHandler = useCallback((e) => {
         console.log('e', e);
         //e.preventDefault();
         const isLogged = checker({username, password});
+        setErrorHidden(!isLogged);
         isLogged && dispatch(login());
         localStorage.setItem('isAuthorized', JSON.stringify(isLogged));
         localStorage.setItem('username', username);
@@ -40,5 +39,6 @@ export const LoginContainer = () => {
         handleUsernameInput={handleUsernameInput}
         handlePasswordInput={handlePasswordInput}
         loginFormSubmitHandler={loginFormSubmitHandler}
+        errorHidden={!errorHidden}
     />;
 }
