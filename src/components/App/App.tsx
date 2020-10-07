@@ -11,6 +11,7 @@ import {ProtectedRoute} from "../../hoc/ProtectedRoute/ProtectedRoute";
 import {useDispatch} from "react-redux";
 import {LoginButton} from "../../hoc/LoginButton/LoginButton";
 import {login} from "../../store/actions/actions";
+import {LoginContainer} from "../Login/LoginContainer";
 
 function App() {
   const classes = useStyles();
@@ -41,7 +42,7 @@ function App() {
             <Route exact path="/" component={ Home } />
             <Route exact path="/news" component={ NewsContainer }/>
             <Route exact path="/profile" component={ ProtectedRoute } />
-            <Route exact path="/login" component={ Login } />
+            <Route exact path="/login" component={ LoginContainer } />
             <Redirect to="/"/>
           </Switch>
         </Container>

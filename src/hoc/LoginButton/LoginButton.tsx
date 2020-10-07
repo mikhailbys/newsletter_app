@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import React from "react";
 import {Link, useHistory} from "react-router-dom";
-import {Button, IconButton, Typography} from "@material-ui/core";
+import {Button, IconButton} from "@material-ui/core";
 import {AccountCircle} from "@material-ui/icons";
 import {logout} from "../../store/actions/actions";
 import useStyles from './styles'
