@@ -1,4 +1,4 @@
-import React, {ChangeEventHandler, useCallback, useState} from 'react';
+import React from 'react';
 import {
     Avatar,
     Button,
@@ -8,36 +8,17 @@ import {
     TextField,
     Typography
 } from "@material-ui/core";
-import {useDispatch} from "react-redux";
-import {login} from "../../store/actions/actions";
 import useStyles from './styles'
-import {UserCredentialsT} from "./types";
-import {useHistory} from "react-router-dom";
+import {PropsT} from "./types";
 
-const checker = (credentials: UserCredentialsT) => credentials.username === 'Admin' && credentials.password === '12345';
-
-export const Login = () => {
-    const [username, setUsername] = useState<string>('');
-    const [password, setPassword] = useState<string>('');
-
-    const dispatch = useDispatch();
+export const Login = ({
+                          username,
+                          password,
+                          handleUsernameInput,
+                          handlePasswordInput,
+                          loginFormSubmitHandler
+                      }:PropsT) => {
     const styles = useStyles();
-    const history = useHistory();
-
-    const handleUsernameInput: ChangeEventHandler<HTMLInputElement> = (event) => setUsername(event.target.value);
-    const handlePasswordInput: ChangeEventHandler<HTMLInputElement> = (event) => setPassword(event.target.value);
-
-    // usecallback для onclick-а
-    const loginFormSubmitHandler = useCallback((e) => {
-        e.preventDefault();
-        const isLogged = checker({username, password});
-        isLogged && dispatch(login());
-        localStorage.setItem('isAuthorized', JSON.stringify(isLogged));
-        localStorage.setItem('username', username);
-        localStorage.setItem('password', password);
-        isLogged && history.push("/");
-    }, [dispatch, password, username])
-
     return (
         <Grid container component="main" className={styles.root}>
             <CssBaseline/>
