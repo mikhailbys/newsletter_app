@@ -10,7 +10,6 @@ import {
 } from "@material-ui/core";
 import useStyles from './styles'
 import {PropsT} from "./types";
-import {useForm} from "react-hook-form";
 
 export const Login = ({
                           username,
@@ -18,7 +17,7 @@ export const Login = ({
                           handleUsernameInput,
                           handlePasswordInput,
                           loginFormSubmitHandler,
-                           errorHidden,
+                          errorHidden,
                           register,
                           handleSubmit,
                           errors
