@@ -22,7 +22,6 @@ export const LoginContainer = () => {
         setPassword(event.target.value);
 
     const loginFormSubmitHandler = useCallback((e) => {
-        console.log('e', e);
         //e.preventDefault();
         const isLogged = checker({username, password});
         setErrorHidden(!isLogged);
