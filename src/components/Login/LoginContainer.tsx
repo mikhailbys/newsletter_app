@@ -21,7 +21,6 @@ export const LoginContainer = () => {
     const handlePasswordInput: ChangeEventHandler<HTMLInputElement> = (event) =>
         setPassword(event.target.value);
 
-    // usecallback для onclick-а
     const loginFormSubmitHandler = useCallback((e) => {
         console.log('e', e);
         //e.preventDefault();
