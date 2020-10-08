@@ -1,7 +1,7 @@
 import {useDispatch, useSelector} from "react-redux";
 import React from "react";
 import {Link, useHistory} from "react-router-dom";
-import {Button, IconButton} from "@material-ui/core";
+import {Button, Typography} from "@material-ui/core";
 import {AccountCircle} from "@material-ui/icons";
 import {logout} from "../../store/actions/actions";
 import useStyles from './styles'
@@ -20,18 +20,12 @@ export const LoginButton = () => {
 
     return (isAuthorized ?
         <>
-            <IconButton
-                className={styles.iconButton}
-                aria-label="account of current user"
-                aria-controls="menu-appbar"
-                aria-haspopup="true"
-                color="inherit"
-            >
-            <span className={styles.span}>
+            <div className={styles.iconButton}>
+            <Typography variant="h6" className={styles.span}>
                 {localStorage.getItem('username')}
-            </span>
+            </Typography>
                 <AccountCircle/>
-            </IconButton>
+            </div>
             <Button
                 className={styles.typography}
                 onClick={logoutHandler}
@@ -39,7 +33,7 @@ export const LoginButton = () => {
             >
                 LOG OUT
             </Button>
-        </>
+            </>
         :
         <Button
             className={styles.button}

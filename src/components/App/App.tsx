@@ -30,9 +30,30 @@ function App() {
       <div className={classes.root}>
         <AppBar position="sticky">
           <Toolbar className={classes.fonts}>
-            <Typography variant="h6" className={classes.title} component={Link} to="/" color="inherit">Home</Typography>
-            <Typography variant="h6" className={classes.title} component={Link} to="/news" color="inherit">News</Typography>
-            <Typography variant="h6" className={classes.title} component={Link} to="/profile" color="inherit">Profile</Typography>
+            <Typography
+                variant="h6"
+                className={classes.title}
+                component={Link}
+                to="/"
+            >
+                Home
+            </Typography>
+            <Typography
+                variant="h6"
+                className={classes.title}
+                component={Link}
+                to="/news"
+            >
+                News
+            </Typography>
+            <Typography
+                variant="h6"
+                className={classes.title}
+                component={Link}
+                to="/profile"
+            >
+                Profile
+            </Typography>
             <LoginButton/>
           </Toolbar>
         </AppBar>
