@@ -1,3 +1,6 @@
+Simple react app
+React/Redux/TypeScript/MaterialUi/Yup/React Hook Form
+
 Реализовать приложение, которое умеет показывать следующие страницы:
 1. / - главная (любая однотипная информация, наподобие lorem ipsum)
 2. /login - страница ввода логина и пароля
