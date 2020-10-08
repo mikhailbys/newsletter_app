@@ -11,5 +11,8 @@ export interface PropsT {
     handleUsernameInput:  ChangeEventHandler<HTMLInputElement>,
     handlePasswordInput: ChangeEventHandler<HTMLInputElement>,
     loginFormSubmitHandler: (e: any) => void,
-    errorHidden: boolean
+    errorHidden: boolean,
+    register:any,
+    handleSubmit:any,
+    errors:any
 }

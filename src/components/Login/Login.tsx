@@ -11,8 +11,6 @@ import {
 import useStyles from './styles'
 import {PropsT} from "./types";
 import {useForm} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers";
-import {loginSchema} from "./validationScheme";
 
 export const Login = ({
                           username,
@@ -20,13 +18,12 @@ export const Login = ({
                           handleUsernameInput,
                           handlePasswordInput,
                           loginFormSubmitHandler,
-                           errorHidden
+                           errorHidden,
+                          register,
+                          handleSubmit,
+                          errors
                       }:PropsT) => {
     const styles = useStyles();
-
-    const {register, handleSubmit, errors, reset} = useForm<any>({
-        resolver: yupResolver(loginSchema)
-    });
 
     return (
         <Grid container component="main" className={styles.root}>
