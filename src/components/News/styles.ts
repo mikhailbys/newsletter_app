@@ -1,8 +1,12 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export default  makeStyles( {
-    EntryCard: {
+    entryCard: {
         margin: '1rem 0'
+    },
+    container: {
+        paddingLeft: "12px",
+        paddingRight: "12px"
     },
     addButton: {
         /* color: '#fff',

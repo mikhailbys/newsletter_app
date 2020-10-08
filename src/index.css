@@ -1,8 +1,18 @@
 body {
   margin: 0;
+  padding: 0;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.contact-a, .contact-a:link, .contact-a:visited, .contact-a:focus, .contact-a:active{
+  color:black;
+  text-decoration:none;
+}
+
+.contact-a:hover{
+  text-decoration: underline;
 }

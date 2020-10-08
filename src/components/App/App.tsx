@@ -57,7 +57,7 @@ function App() {
             <LoginButton/>
           </Toolbar>
         </AppBar>
-        <Container maxWidth="xl">
+        <Container maxWidth="xl" style={{padding: "0"}}>
           <Switch>
             <Route exact path="/" component={ Home } />
             <Route exact path="/news" component={ NewsContainer }/>

@@ -1,19 +1,20 @@
 import React from 'react';
-import {Paper, Typography} from "@material-ui/core";
+import { Typography} from "@material-ui/core";
 import homeImgSource from '../../resources/forest.jpg'
 import useStyles from './styles'
+import {Footer} from "../Footer/Footer";
 
 export const Home = () => {
     const styles = useStyles();
     return (
     <>
-        <Paper className={styles.paper}>
+        <div>
             <img
                 className={styles.image}
                 src={homeImgSource}
                 alt="Forest"
             />
-            <div>
+
                 <section>
                     <Typography
                         variant="h3"
@@ -24,11 +25,12 @@ export const Home = () => {
                     <p
                         className={styles.p}
                     >
-                        This is a paragraph of the home page.
+                        JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. While it is most well-known as the scripting language for Web pages, many non-browser environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat. JavaScript is a prototype-based, multi-paradigm, single-threaded, dynamic language, supporting object-oriented, imperative, and declarative (e.g. functional programming) styles. Read more about JavaScript.
                     </p>
                 </section>
-            </div>
-        </Paper>
+
+        </div>
+        <Footer/>
     </>
     );
 }
