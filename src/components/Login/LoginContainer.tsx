@@ -2,7 +2,7 @@ import React, {ChangeEventHandler, useCallback, useState} from "react";
 import {useDispatch} from "react-redux";
 import {useHistory} from "react-router-dom";
 import {login} from "../../store/actions/actions";
-import {UserCredentialsT} from "./types";
+import {FieldT, UserCredentialsT} from "./types";
 import {Login} from "./Login";
 import {yupResolver} from "@hookform/resolvers";
 import {loginSchema} from "./validationScheme";
@@ -14,7 +14,7 @@ const checker = (credentials: UserCredentialsT) =>
 export const LoginContainer = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const {register, handleSubmit, errors} = useForm<any>({
+    const {register, handleSubmit, errors} = useForm<Record<string, FieldT>>({
         resolver: yupResolver(loginSchema)
     });
 

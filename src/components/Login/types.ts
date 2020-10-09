@@ -16,3 +16,7 @@ export interface PropsT {
     handleSubmit:any,
     errors:any
 }
+
+export interface FieldT {
+    title: string
+}
